@@ -1,5 +1,7 @@
 //! Types for representing signs in MUTCD format.
 
+use crate::models;
+
 /// FHWA Standard Alphabet series.
 pub enum FhwaSeries {
     B,
@@ -32,29 +34,9 @@ pub enum MutcdSignShape {
     Trapezoid,
 }
 
-/// A direction.
-pub enum Direction {
-    Left,
-    Right,
-    Up,
-    Down,
-}
-
-/// A location on the sign.
-pub enum Location {
-    Direction(Direction),
-    Center,
-}
-
-/// An arrow on the sign.
-pub struct Arrow {
-    pub direction: Direction,
-    pub location: Location,
-}
-
 /// The features of the sign.
 pub struct MutcdSignFeatures {
-    pub arrow: Option<Arrow>,
+    pub arrow: Option<models::Arrow>,
 }
 
 /// A sign with MUTCD features.
