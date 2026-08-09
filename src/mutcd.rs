@@ -9,7 +9,7 @@ pub enum FhwaSeries {
     F,
 }
 
-/// Unmodified and modified variants of the FHWA Series E.
+/// Variants of the FHWA Standard Alphabet Series E.
 pub enum FhwaSeriesE {
     Unmodified,
     Modified { alternate: bool },
@@ -32,17 +32,24 @@ pub enum MutcdSignShape {
     Trapezoid,
 }
 
-/// The direction for the [`Arrow`] struct.
-pub enum ArrowDirection {
+/// A direction.
+pub enum Direction {
     Left,
     Right,
     Up,
     Down,
 }
 
-/// The arrow on the sign.
+/// A location on the sign.
+pub enum Location {
+    Direction(Direction),
+    Center,
+}
+
+/// An arrow on the sign.
 pub struct Arrow {
-    pub direction: ArrowDirection,
+    pub direction: Direction,
+    pub location: Location,
 }
 
 /// The features of the sign.
@@ -50,7 +57,7 @@ pub struct MutcdSignFeatures {
     pub arrow: Option<Arrow>,
 }
 
-/// The sign with MUTCD features.
+/// A sign with MUTCD features.
 pub struct MutcdSign {
     /// Text to display on the sign.
     pub text: String,
