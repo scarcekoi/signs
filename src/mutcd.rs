@@ -1,5 +1,7 @@
 //! Types for representing signs in MUTCD format.
 
+use mutcd_colors::models::MutcdColor;
+
 use crate::models;
 
 /// FHWA Standard Alphabet series.
@@ -34,9 +36,15 @@ pub enum MutcdSignShape {
     Trapezoid,
 }
 
+/// The colors on the sign.
+pub struct MutcdSignColors {
+    pub border: Option<MutcdColor>,
+}
+
 /// The features of the sign.
 pub struct MutcdSignFeatures {
     pub arrow: Option<models::Arrow>,
+    pub colors: Option<MutcdSignColors>,
 }
 
 /// A sign with MUTCD features.
