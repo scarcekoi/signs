@@ -10,3 +10,4 @@ repository = "https://github.com/scarcekoi/signs"
 license = "MIT"
 
 [dependencies]
+mutcd-colors = "0.1.1"
