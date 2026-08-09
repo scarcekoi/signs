@@ -2,7 +2,7 @@
 name = "signs"
 version = "0.1.0"
 edition = "2024"
-description = "Tool for creating signs."
+description = "A tool for creating signs."
 keywords = ["mutcd", "fhwa", "traffic-signs", "road-signs"]
 readme = "README.md"
 homepage = "https://github.com/scarcekoi/signs"
